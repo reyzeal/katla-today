@@ -16,4 +16,4 @@ app.get("/", async (req,res) => {
     res.render("index", payload)
 })
 
-app.listen(3000, "0.0.0.0", () => {})
+app.listen(process.env.port || 3000, "0.0.0.0", () => {})

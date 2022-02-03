@@ -2,12 +2,13 @@
   "version": 2,
   "builds": [
     {
-      "src": "views",
-      "use": "@now/static"
-    },
-    {
       "src": "./index.js",
-      "use": "@now/node-server"
+      "use": "@now/node",
+      "config": {
+        "includeFiles": [
+          "views"
+        ]
+      }
     }
   ],
   "routes": [

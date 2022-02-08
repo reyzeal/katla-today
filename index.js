@@ -15,7 +15,7 @@ app.get("/", async (req,res) => {
     //    payload["data"+i] = data[i-1]
     //}
     const payload = await axios.get(`https://katla.vercel.app/api/define/${data}`).then(r => r.data)
-    res.render("index", payload.pop())
+    res.render("index", {data:payload.pop()} )
 })
 
 app.listen(process.env.port || 3000, "0.0.0.0", () => {})

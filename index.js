@@ -4,6 +4,7 @@ const engine = require("./engine")
 const axios = require("axios") 
 const app = express()
 
+app.use(express.static('static'))
 app.engine('mustache', mustacheExpress());
 app.set('view engine', 'mustache');
 

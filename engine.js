@@ -2,7 +2,7 @@ const axios = require("axios");
 module.exports = () => {
     return axios.get("https://katla.vercel.app/").then(r => {
         if(r.data){
-            const raw = JSON.parse(`{${r.data.match(/"hash":"(\w+)"/g)}}`)
+            const raw = JSON.parse(`{${r.data.match(/"hash":"([^"]+)"/g)}}`)
             let data = raw.hash.split("")
             let t = data.pop()
             data = data.map((v,i) => {
